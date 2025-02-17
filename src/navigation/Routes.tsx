@@ -8,6 +8,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screen/bottomTab/HomeScreen';
+import Authentication from '../component/authentication/Authentication';
+import AuthenticationScreen from '../screen/authentication/AuthenticationScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Bottom = createBottomTabNavigator<BottomStackParamList>();
@@ -16,10 +18,11 @@ export function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="BottomTabs"
+        initialRouteName="Authentication"
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="Authentication" component={AuthenticationScreen} />
         <Stack.Screen name="BottomTabs" component={BottomTabs} />
       </Stack.Navigator>
     </NavigationContainer>

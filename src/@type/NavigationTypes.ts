@@ -4,6 +4,7 @@ export type MainStackScreenProps<T extends keyof RootStackParamList> =
   StackScreenProps<RootStackParamList, T>;
 
 export type RootStackParamList = {
+  Authentication: undefined;
   BottomTabs: undefined;
 };
 

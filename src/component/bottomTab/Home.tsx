@@ -1,8 +1,10 @@
 import React from 'react';
 import {AppColors} from '../../constant/AppColors';
+import CustomText from '../common/reuseable/CustomText';
+import {View, SafeAreaView, StyleSheet} from 'react-native';
 import SimpleHeader from '../common/reuseable/SimpleHeader';
 import {appPaddingHorizontal} from '../../constant/AppConstants';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {normalizeFont, normalizeHeight} from '../../utils/CommonFunctions';
 
 const Home = () => {
   return (
@@ -13,7 +15,15 @@ const Home = () => {
       <View style={styles.container}>
         <SimpleHeader title="Home" isBackIconVisible={true} />
         <View style={styles.innerContainer}>
-          <Text>Home</Text>
+          <CustomText
+            preset="medium"
+            text="helloWorld"
+            color={AppColors.black}
+            fontSize={normalizeFont(12)}
+            style={{
+              marginTop: normalizeHeight(10),
+            }}
+          />
         </View>
       </View>
     </SafeAreaView>

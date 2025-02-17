@@ -3,6 +3,7 @@ import {AxiosError} from 'axios';
 import Toast from 'react-native-simple-toast';
 import {Dimensions, PixelRatio, Platform} from 'react-native';
 import {initialWindowMetrics} from 'react-native-safe-area-context';
+import {useMemo} from 'react';
 
 const figmaScreenWidth = 440;
 const figmaScreenHeight = 932;
@@ -47,4 +48,9 @@ export const getErrorData = (e: unknown) => {
       return e?.response?.data?.result?.toLowerCase();
     }
   } catch (e) {}
+};
+
+export const imageAspectHeight = (width: number, height: number) => {
+  const ratio = width / height;
+  return normalizeWidth(width) / ratio;
 };
